@@ -45,7 +45,7 @@ public class EnemySpawn : MonoBehaviour
         room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.VERTICAL, minDistance, LabelFilter.Included(spawnLabel), out Vector3 pos, out Vector3 norm);
 
         Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
-        randomPositionNormalOffset.y = 0;
+        randomPositionNormalOffset.y = 1;
 
         Instantiate(prefabToSpawn, randomPositionNormalOffset, Quaternion.identity);
     }

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SocialPlatforms;
 
 public class Enemy : MonoBehaviour
 {
-    private NavMeshAgent _agent; //Pour le navMeshAgent
-    [SerializeField] private Transform _tower; //La tour pricipale
+    private NavMeshAgent agent; //Pour le navMeshAgent
+    [SerializeField] private Transform tower; //La tour pricipale
 
     [Header("Attributs")]
     public float range = 15f; //La distance avant que l'enemie peut tirer
@@ -34,7 +33,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>(); 
+        agent = GetComponent<NavMeshAgent>(); 
 
         _renderer = GetComponent<Renderer>();
         _renderer.enabled = true;
@@ -46,7 +45,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _agent.SetDestination(_tower.transform.position);
+        agent.SetDestination(tower.transform.position); //Destination du NavMesh
 
         _renderer.sharedMaterial = material[_element];
         EnemyHealth(); //Change le matriel de l'enemie pour avertir le joueur que cet enemie est presque mort
@@ -78,7 +77,7 @@ public class Enemy : MonoBehaviour
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         if(bullet != null)
         {
-            bullet.Seek(_tower);
+            bullet.Seek(tower);
         }
     }
 
@@ -99,10 +98,10 @@ public class Enemy : MonoBehaviour
         
         if (tower.tag == "Tower")
         {
-            float distanceToTower = Vector3.Distance(transform.position, _tower.transform.position); //La distance en la tour et l'enemie
+            float distanceToTower = Vector3.Distance(transform.position, tower.transform.position); //La distance en la tour et l'enemie
             
             if (distanceToTower <= range && fireCountdown <= 0) {
-                _agent.speed = 0; //Fait arrêter l'enemie
+                agent.speed = 0; //Fait arrêter l'enemie
                 Shoot(); //Fait spawner un projectile vers la tour
                 fireCountdown = 1 / fireRate; //Vitesse de tir
             }
