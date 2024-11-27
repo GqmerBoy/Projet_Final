@@ -1250,11 +1250,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d341fd552b63f34290c308ffdd4360f, type: 2}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d341fd552b63f34290c308ffdd4360f, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d341fd552b63f34290c308ffdd4360f, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d341fd552b63f34290c308ffdd4360f, type: 2}
     - target: {fileID: 919132149155446097, guid: 83c298a0754ba1144bc92920c9f01d1c,
         type: 3}
       propertyPath: m_Name
       value: Sixieme_Canon
       objectReference: {fileID: 0}
+    - target: {fileID: 3602769019609669885, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d341fd552b63f34290c308ffdd4360f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1708,11 +1733,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
     - target: {fileID: 919132149155446097, guid: 83c298a0754ba1144bc92920c9f01d1c,
         type: 3}
       propertyPath: m_Name
       value: Sixieme_Canon_Upgrade (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3602769019609669885, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2435,11 +2485,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: -4795160085687874365, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
+    - target: {fileID: 549655460268315275, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
     - target: {fileID: 919132149155446097, guid: 83c298a0754ba1144bc92920c9f01d1c,
         type: 3}
       propertyPath: m_Name
       value: Sixieme_Canon_Upgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 3602769019609669885, guid: 83c298a0754ba1144bc92920c9f01d1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d0d5577bb487c4291f45bcf0b0d011, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
