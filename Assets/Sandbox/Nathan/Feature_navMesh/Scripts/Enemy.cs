@@ -102,9 +102,11 @@ public class Enemy : MonoBehaviour
             float distanceToTower = Vector3.Distance(transform.position, _tower.transform.position); //La distance en la tour et l'enemie
             
             if (distanceToTower <= range && fireCountdown <= 0) {
+                _agent.speed = 0; //Fait arrêter l'enemie
                 Shoot(); //Fait spawner un projectile vers la tour
                 fireCountdown = 1 / fireRate; //Vitesse de tir
             }
+
         }
 
         fireCountdown -= Time.deltaTime; //Pour que le countdown soit à la seconde près

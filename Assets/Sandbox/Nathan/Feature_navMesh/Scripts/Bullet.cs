@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 {
     private Transform _tower;
 
-    [SerializeField] private float _speed = 70f;
+    [SerializeField] BulletSO bulletSO;
 
     public void Seek(Transform _target){
         _tower = _target;
@@ -18,16 +18,16 @@ public class Bullet : MonoBehaviour
     {
         if(_tower == null)
         {
-            Destroy(gameObject);
-            return;
+            //Destroy(gameObject);
+            //return;
         }
 
-        Vector3 dir = _tower.position - transform.position;
-        float distanceThisFrame = _speed * Time.deltaTime;
+        Vector3 dir = _tower.position - transform.position; //La direction dans laquelle l'enemie tir
+        float distanceThisFrame = bulletSO.vitesse * Time.deltaTime;
 
         if(dir.magnitude <= distanceThisFrame)
         {
-            HitTower();
+            HitTower(); //Appel lorsque la distance entre le projectile et la tour est 0
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
 
     private void HitTower()
     {
-        //Debug.Log("TOUCHÉ");
-        Destroy(gameObject);
+        Destroy(gameObject); //Détruit le projectile lorsqu'il touche la tour
+        return;
     }
 }
