@@ -33,12 +33,12 @@ public class EnemySpawn : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > spawnTimer)
         {
-            SpawnGhost();
+            SpawnEnemy();
             timer -= spawnTimer;
         }
     }
 
-    public void SpawnGhost()
+    public void SpawnEnemy()
     {
         MRUKRoom room = MRUK.Instance.GetCurrentRoom();
 

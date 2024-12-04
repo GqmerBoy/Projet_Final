@@ -145,9 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 4885693270218404804, guid: 659c7043ad7b52f4fafdfbcac9b775ba, type: 3}
-  range: 2
-  fireRate: 1
-  health: 100
+  enemySO: {fileID: 11400000, guid: 9dc97ed8a8e72bc4da2f34b07d03d3cc, type: 2}
   bulletPrefab: {fileID: 6923615454731735584, guid: 6ae301e5c7311fd42a685fd6514ec588,
     type: 3}
   firePoint: {fileID: 3025254470558727838}

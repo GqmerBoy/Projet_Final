@@ -10,10 +10,7 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent; //Pour le navMeshAgent
     [SerializeField] private Transform tower; //La tour pricipale
 
-    [Header("Attributs")]
-    public float range = 15f; //La distance avant que l'enemie peut tirer
-    public float fireRate = 1f; //La vitesse à laquelle l'enemie tire
-    public float health = 100; //Les PVs de l'enemie
+    [SerializeField] EnemySO enemySO;
 
 
     [Header("Unity setup")]
@@ -56,9 +53,8 @@ public class Enemy : MonoBehaviour
 
     private void EnemyHealth()
     {
-        if(health <= 25)
+        if(enemySO.pointsDeVie <= 25)
         {
-            Debug.Log(health);
             _element = 1;
         }
 
@@ -87,7 +83,7 @@ public class Enemy : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, enemySO.rangeTir);
     }
 
 
@@ -100,10 +96,10 @@ public class Enemy : MonoBehaviour
         {
             float distanceToTower = Vector3.Distance(transform.position, tower.transform.position); //La distance en la tour et l'enemie
             
-            if (distanceToTower <= range && fireCountdown <= 0) {
+            if (distanceToTower <= enemySO.rangeTir && fireCountdown <= 0) {
                 agent.speed = 0; //Fait arrêter l'enemie
                 Shoot(); //Fait spawner un projectile vers la tour
-                fireCountdown = 1 / fireRate; //Vitesse de tir
+                fireCountdown = 1 / enemySO.vitesseTir; //Vitesse de tir
             }
 
         }

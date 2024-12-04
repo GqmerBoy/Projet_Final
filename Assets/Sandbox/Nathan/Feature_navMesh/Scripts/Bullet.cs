@@ -18,12 +18,12 @@ public class Bullet : MonoBehaviour
     {
         if(_tower == null)
         {
-            //Destroy(gameObject);
-            //return;
+            Destroy(gameObject);
+            return;
         }
 
         Vector3 dir = _tower.position - transform.position; //La direction dans laquelle l'enemie tir
-        float distanceThisFrame = bulletSO.vitesse * Time.deltaTime;
+        float distanceThisFrame = bulletSO.vitesseDeplacement * Time.deltaTime;
 
         if(dir.magnitude <= distanceThisFrame)
         {
