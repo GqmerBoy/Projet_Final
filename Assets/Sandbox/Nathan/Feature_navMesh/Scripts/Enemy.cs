@@ -17,11 +17,9 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private GameObject bulletPrefab; //Le projectile de l'enemie
     [SerializeField] private Transform firePoint; //Le point départ du projectile
-    [SerializeField] private Material[] material; //Les matériaux de l'enemie
 
 
     private int _element = 0; //L'élément du matériel
-    private Renderer _renderer; 
     private float fireCountdown = 0f; //Le countdown pour le fireRate
     private string towerTag = "Tower"; //Le tag de la tour
 
@@ -31,10 +29,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); 
-
-        _renderer = GetComponent<Renderer>();
-        _renderer.enabled = true;
-        _renderer.sharedMaterial = material[_element];
     }
 
 
@@ -44,7 +38,6 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(tower.transform.position); //Destination du NavMesh
 
-        _renderer.sharedMaterial = material[_element];
         EnemyHealth(); //Change le matriel de l'enemie pour avertir le joueur que cet enemie est presque mort
         Target(); //Appelle la fonction Shoot() si l'enemy est assez proche de la tour à une fréquence de tir définie.
     }
