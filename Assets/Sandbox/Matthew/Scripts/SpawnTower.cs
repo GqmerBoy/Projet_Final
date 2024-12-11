@@ -3,9 +3,19 @@ using UnityEngine;
 using Meta.XR.MRUtilityKit;
 using TMPro;
 
-public class DisplayLabel : MonoBehaviour
+public class SpawnTower : MonoBehaviour
 {
+    public int numero = 0;
+
+    // Boutons
     [SerializeField] private GameObject bouton1;
+    [SerializeField] private GameObject bouton2;
+    [SerializeField] private GameObject bouton3;
+
+    // Objets Tours Différentes
+    [SerializeField] public GameObject tour1;
+    [SerializeField] public GameObject tour2;
+    [SerializeField] public GameObject tour3;
 
     [Header("Raycast Settings")]
     [Tooltip("Point de d�part du rayon pour d�tecter les ancres.")]
@@ -117,12 +127,12 @@ public class DisplayLabel : MonoBehaviour
         // V�rifier si l'angle est dans la plage accept�e
         if (rotationXGizmo >= minAngle && rotationXGizmo <= maxAngle)
         {
-            Debug.LogWarning("L'objet pointe vers le ciel !");
+            //Debug.LogWarning("L'objet pointe vers le ciel !");
             return true;
         }
         else
         {
-            Debug.LogWarning("L'objet ne pointe pas vers le ciel.");
+            //Debug.LogWarning("L'objet ne pointe pas vers le ciel.");
             return false;
         }
     }
@@ -136,7 +146,20 @@ public class DisplayLabel : MonoBehaviour
         // V�rifier si le bouton de cr�ation de tour est press�
         if (OVRInput.GetDown(spawnButton, controller))
         {
-            Instantiate(towerPrefab, hitPoint, Quaternion.identity);
+            if(numero == 1){
+                Instantiate(tour1, hitPoint, Quaternion.identity);
+                bouton1.GetComponent<instanceTowers>().Tour1(); 
+            }
+            else if(numero == 2){
+                Instantiate(tour2, hitPoint, Quaternion.identity);
+                bouton2.GetComponent<instanceTowers>().Tour2(); 
+            }
+
+            else if(numero == 3){
+                Instantiate(tour3, hitPoint, Quaternion.identity);
+                bouton3.GetComponent<instanceTowers>().Tour3(); 
+            }
+            
         }
     }
 }
