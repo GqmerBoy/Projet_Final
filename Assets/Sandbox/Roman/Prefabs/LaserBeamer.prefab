@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2523195095601818065}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.50000006, y: -0.49999994, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 1.3974535, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -142,13 +142,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2645136888768776346}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000029802322, y: 0.7071067, z: 0.000000029802322, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100.000015, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2692391928467365090}
   m_Father: {fileID: 1876135429572877576}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &2219859505578836398
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -234,7 +235,6 @@ Transform:
   m_Children:
   - {fileID: 6546232963545384425}
   - {fileID: 1876135429572877576}
-  - {fileID: 2692391928467365090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2954305855550050882
@@ -250,13 +250,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
+  bulletPrefab: {fileID: 0}
   fireRate: 1
-  fireCountdown: 0
-  turnSpeed: 10
+  useLaser: 1
+  lineRenderer: {fileID: 2354470916769212877}
   enemyTag: Enemy
+  turnSpeed: 10
   target: {fileID: 0}
   partToRotate: {fileID: 1876135429572877576}
-  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 2692391928467365090}
 --- !u!120 &2354470916769212877
 LineRenderer:
@@ -323,8 +324,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0.016252995, a: 1}
-      key1: {r: 1, g: 0.6494836, b: 0, a: 1}
+      key0: {r: 0, g: 1, b: 0.31235218, a: 1}
+      key1: {r: 0, g: 0.6143918, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -386,10 +387,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7567901339576941267}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.721, y: 1.851, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0.000000029802322, z: -0.000000029802322, w: 0.7071067}
+  m_LocalPosition: {x: -0.016609997, y: 0, z: 0.004825463}
+  m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6811533650963113509}
+  m_Father: {fileID: 1006612297201481511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
