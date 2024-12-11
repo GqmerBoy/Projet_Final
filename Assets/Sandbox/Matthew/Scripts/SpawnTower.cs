@@ -5,6 +5,8 @@ using TMPro;
 
 public class DisplayLabel : MonoBehaviour
 {
+    [SerializeField] private GameObject bouton1;
+
     [Header("Raycast Settings")]
     [Tooltip("Point de d�part du rayon pour d�tecter les ancres.")]
     [SerializeField] private Transform rayStartPoint;
