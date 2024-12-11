@@ -15,7 +15,7 @@ public class EnemySO : ScriptableObject {
     public float vitesseMouvement = 0.5f;
 
     [Range(5, 500)]
-    [Tooltip("Nombre de point lorsque détruit")]
+    [Tooltip("Nombre de point lorsque dï¿½truit")]
     public int nbPoints = 5;
 
     [Header("Attributs des projectiles")]
@@ -24,6 +24,6 @@ public class EnemySO : ScriptableObject {
     public float vitesseTir = 1;
     
     [Range(1, 5)]
-    [Tooltip("Distance où l'enemis commence à tirer")]
+    [Tooltip("Distance oï¿½ l'enemis commence ï¿½ tirer")]
     public float rangeTir = 1;
 }

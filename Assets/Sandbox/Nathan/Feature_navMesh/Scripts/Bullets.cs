@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullets : MonoBehaviour
 {
     private Transform _tower;
 
