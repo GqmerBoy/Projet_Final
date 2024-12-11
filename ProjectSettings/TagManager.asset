@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tower
+
+  - SamplesInfoPanel
+  - Enemy
+
   layers:
   - Default
   - TransparentFX
