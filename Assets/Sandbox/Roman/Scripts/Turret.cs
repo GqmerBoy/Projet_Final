@@ -19,6 +19,10 @@ public class Turret : MonoBehaviour
     [SerializeField] bool useLaser = false;
     [SerializeField] LineRenderer lineRenderer;
 
+    [Header("Use Missiles")]
+    [SerializeField] bool useMissiles = false;
+    [SerializeField] GameObject missilePrefab;
+
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
@@ -114,12 +118,24 @@ public class Turret : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-
-        if (bullet != null) 
+        GameObject projectile;
+        if (useMissiles)
         {
-            bullet.Seek(target);
+            projectile = Instantiate(missilePrefab, firePoint.position, firePoint.rotation);
+            Missile missile = projectile.GetComponent<Missile>();
+            if (missile != null)
+            {
+                missile.Seek(target);
+            }
+        }
+        else
+        {
+            projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bulletComponent = projectile.GetComponent<Bullet>();
+            if (bulletComponent != null)
+            {
+                bulletComponent.Seek(target);
+            }
         }
     }
 
