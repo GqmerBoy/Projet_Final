@@ -38,26 +38,8 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(tower.transform.position); //Destination du NavMesh
 
-        EnemyHealth(); //Change le matriel de l'enemie pour avertir le joueur que cet enemie est presque mort
         Target(); //Appelle la fonction Shoot() si l'enemy est assez proche de la tour à une fréquence de tir définie.
     }
-
-
-
-    private void EnemyHealth()
-    {
-        if(enemySO.pointsDeVie <= 25)
-        {
-            _element = 1;
-        }
-
-        else
-        {
-            _element = 0;
-        }
-    }
-
-
 
     private void Shoot()
     {

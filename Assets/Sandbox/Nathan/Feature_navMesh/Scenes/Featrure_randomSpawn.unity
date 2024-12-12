@@ -1797,6 +1797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019495225}
   - component: {fileID: 2019495224}
+  - component: {fileID: 2019495227}
   - component: {fileID: 2019495226}
   m_Layer: 0
   m_Name: NavMeshSurface
@@ -1863,6 +1864,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8f892d112189f4cb9668b37015b208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2019495227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019495223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d607ba0c0320e446ba9d62671d9d7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnStart: 1
+  SeedValue: 0
+  PrefabsToSpawn:
+  - Labels: 8088
+    Prefabs:
+    - {fileID: 8420146333569017208, guid: dd06ce2b18e9d854fa9da6fcb8727921, type: 3}
+    PrefabSelection: 0
+    MatchAspectRatio: 0
+    CalculateFacingDirection: 0
+    Scaling: 0
+    Alignment: 0
+    IgnorePrefabSize: 0
+  - Labels: 4
+    Prefabs:
+    - {fileID: 7416172924185234803, guid: 014ac4d04417d094eb3fd0146a49b9f4, type: 3}
+    PrefabSelection: 0
+    MatchAspectRatio: 0
+    CalculateFacingDirection: 0
+    Scaling: 0
+    Alignment: 0
+    IgnorePrefabSize: 0
 --- !u!1 &2074885564
 GameObject:
   m_ObjectHideFlags: 0
