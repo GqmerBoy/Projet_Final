@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 
-    [SerializeField] private float spawnTimer = 1f;
+    [SerializeField] private float spawnTimer = 5f;
     [SerializeField] private GameObject prefabToSpawn;
     
     [SerializeField] private float minDistance = 0.3f;
@@ -28,6 +28,12 @@ public class EnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
             timer -= spawnTimer;
+            spawnTimer -= 0.33f;
+        }
+
+        if (spawnTimer <= 2f)
+        {
+            spawnTimer = 2f;
         }
     }
 

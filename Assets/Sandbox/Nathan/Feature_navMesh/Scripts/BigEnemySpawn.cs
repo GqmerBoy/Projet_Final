@@ -6,7 +6,7 @@ using UnityEngine;
 public class BigEnemySpawn : MonoBehaviour
 {
 
-    [SerializeField] private float spawnTimer = 1f;
+    [SerializeField] private float spawnTimer = 10f;
     [SerializeField] private GameObject prefabToSpawn;
 
     [SerializeField] private float minDistance = 0.3f;
@@ -15,12 +15,6 @@ public class BigEnemySpawn : MonoBehaviour
 
     private float timer;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +29,12 @@ public class BigEnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
             timer -= spawnTimer;
+            spawnTimer -= 0.5f;
+        }
+
+        if (spawnTimer <= 4f)
+        {
+            spawnTimer = 4f;
         }
     }
 
