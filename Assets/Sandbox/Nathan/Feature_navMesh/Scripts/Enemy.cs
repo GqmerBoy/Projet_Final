@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform tower; //La tour pricipale
 
     [SerializeField] EnemySO enemySO;
+    [SerializeField] PointManager pointManager;
 
 
     [Header("Unity setup")]
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform firePoint; //Le point départ du projectile
 
 
-    private int _element = 0; //L'élément du matériel
+    private int element = 0; //L'élément du matériel
     private float fireCountdown = 0f; //Le countdown pour le fireRate
     private string towerTag = "Tower"; //Le tag de la tour
 
@@ -41,11 +42,13 @@ public class Enemy : MonoBehaviour
         Target(); //Appelle la fonction Shoot() si l'enemy est assez proche de la tour à une fréquence de tir définie.
     }
 
+
+
     private void Shoot()
     {
         //Debug.Log("Shoot");
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        EnemyProjectile bullet = bulletGO.GetComponent<EnemyProjectile>();
         if(bullet != null)
         {
             bullet.Seek(tower);
@@ -63,7 +66,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    void Target()
+    private void Target()
     {
         GameObject tower = GameObject.FindGameObjectWithTag(towerTag);
         
@@ -80,5 +83,24 @@ public class Enemy : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime; //Pour que le countdown soit à la seconde près
+    }
+
+
+
+    private void Death()
+    {
+        if (enemySO.pointsDeVie <= 0) 
+        { 
+            Destroy(this.gameObject);
+            return;
+        }
+    }
+
+
+
+    private void OnDestroy()
+    {
+        pointManager.points += enemySO.nbPoints;
+        pointManager.money += enemySO.nbPoints;
     }
 }

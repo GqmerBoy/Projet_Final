@@ -29,7 +29,7 @@ public class BigEnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
             timer -= spawnTimer;
-            spawnTimer -= 0.5f;
+            spawnTimer -= 0.15f;
         }
 
         if (spawnTimer <= 4f)

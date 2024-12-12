@@ -28,7 +28,7 @@ public class EnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
             timer -= spawnTimer;
-            spawnTimer -= 0.33f;
+            spawnTimer -= 0.10f;
         }
 
         if (spawnTimer <= 2f)
