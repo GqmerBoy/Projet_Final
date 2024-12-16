@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919412b8ad5bcd44e9fda2632a9f2f39, type: 3}
   m_Name: BigEnemy
   m_EditorClassIdentifier: 
-  pointsDeVie: 150
+  pointsDeVie: 200
   vitesseMouvement: 0.2
   nbPoints: 100
   vitesseTir: 0.1

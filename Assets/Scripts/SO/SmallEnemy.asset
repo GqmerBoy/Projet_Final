@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919412b8ad5bcd44e9fda2632a9f2f39, type: 3}
   m_Name: SmallEnemy
   m_EditorClassIdentifier: 
-  pointsDeVie: 75
+  pointsDeVie: 100
   vitesseMouvement: 0.75
   nbPoints: 15
   vitesseTir: 3

@@ -120,7 +120,7 @@ public class Turret : MonoBehaviour
         Enemy enemy = target.GetComponent<Enemy>();
         if (enemy != null)
         {
-            /*enemy.TakeDamage(laserDamagePerSecond * Time.deltaTime);*/
+            enemy.TakeDamage(laserDamagePerSecond * Time.deltaTime);
         }
     }
 

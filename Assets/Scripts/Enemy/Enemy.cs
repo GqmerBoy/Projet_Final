@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] EnemySO enemySO;
     [SerializeField] PointManager pointManager;
+    private float currentHealth;
 
 
     [Header("Unity setup")]
@@ -23,12 +24,11 @@ public class Enemy : MonoBehaviour
     private float fireCountdown = 0f; //Le countdown pour le fireRate
     private string towerTag = "Tower"; //Le tag de la tour
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); 
+        agent = GetComponent<NavMeshAgent>();
+        currentHealth = enemySO.pointsDeVie;
     }
 
 
@@ -86,10 +86,12 @@ public class Enemy : MonoBehaviour
 
 
 
-    private void Death()
+    public void TakeDamage(float amount)
     {
-        if (enemySO.pointsDeVie <= 0) 
-        { 
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
             Destroy(this.gameObject);
             return;
         }
@@ -97,9 +99,9 @@ public class Enemy : MonoBehaviour
 
 
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         pointManager.points += enemySO.nbPoints;
         pointManager.money += enemySO.nbPoints;
-    }
+    }*/
 }

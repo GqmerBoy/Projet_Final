@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemySO : ScriptableObject {
 
     [Header("Attributs de l'enemie")]
-    [Range(25f, 250f)]
+    [Range(0f, 250f)]
     [Tooltip("Points de vie")]
     public float pointsDeVie = 25f;
 
