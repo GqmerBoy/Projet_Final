@@ -18,6 +18,11 @@ public class Turret : MonoBehaviour
 
     [SerializeField] bool useLaser = false;
     [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] float laserDamagePerSecond = 30f;
+
+    [Header("Use Missiles")]
+    [SerializeField] bool useMissiles = false;
+    [SerializeField] GameObject missilePrefab;
 
     [Header("Unity Setup Fields")]
 
@@ -105,21 +110,41 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
-        if(!lineRenderer.enabled)
+        if (!lineRenderer.enabled)
             lineRenderer.enabled = true;
 
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
+
+        // Apply damage to target
+        Enemy enemy = target.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            /*enemy.TakeDamage(laserDamagePerSecond * Time.deltaTime);*/
+        }
     }
 
-    void Shoot()
-    {
-        GameObject bulletGO = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
 
-        if (bullet != null) 
+void Shoot()
+    {
+        GameObject projectile;
+        if (useMissiles)
         {
-            bullet.Seek(target);
+            projectile = Instantiate(missilePrefab, firePoint.position, firePoint.rotation);
+            Missile missile = projectile.GetComponent<Missile>();
+            if (missile != null)
+            {
+                missile.Seek(target);
+            }
+        }
+        else
+        {
+            projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bulletComponent = projectile.GetComponent<Bullet>();
+            if (bulletComponent != null)
+            {
+                bulletComponent.Seek(target);
+            }
         }
     }
 
