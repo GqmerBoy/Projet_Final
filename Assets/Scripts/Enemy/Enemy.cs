@@ -86,9 +86,9 @@ public class Enemy : MonoBehaviour
 
 
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float damage)
     {
-        currentHealth -= amount;
+        currentHealth -= damage;
 
         if (currentHealth <= 0)
         {
