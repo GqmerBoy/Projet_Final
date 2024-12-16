@@ -6,12 +6,11 @@ public class Turret : MonoBehaviour
 {
     [Header("General")]
 
-    [SerializeField] float range = 15f;
+    [SerializeField] private TurretSO turretSO;
 
     [Header("Use Bullets (default)")]
 
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float fireRate = 1;
     private float fireCountdown = 0f;
 
     [Header("Use Laser")]
@@ -27,7 +26,6 @@ public class Turret : MonoBehaviour
     [Header("Unity Setup Fields")]
 
     public string enemyTag = "Enemy";
-    [SerializeField] float turnSpeed = 10f;
     [SerializeField] Transform target;
     [SerializeField] Transform partToRotate;
     [SerializeField] Transform firePoint;
@@ -58,7 +56,7 @@ public class Turret : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range) 
+        if (nearestEnemy != null && shortestDistance <= turretSO.rangeTir) 
         {
             target = nearestEnemy.transform;
         }
@@ -93,7 +91,7 @@ public class Turret : MonoBehaviour
             if (fireCountdown <= 0F)
             {
                 Shoot();
-                fireCountdown = 1f / fireRate;
+                fireCountdown = 1f / turretSO.vitesseTir;
             }
 
             fireCountdown -= Time.deltaTime;
@@ -104,7 +102,7 @@ public class Turret : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        Quaternion rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turretSO.vitesseRotation);
         partToRotate.rotation = Quaternion.Euler(0f, rotation.eulerAngles.y, 0f);
     }
 
@@ -151,6 +149,6 @@ void Shoot()
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, turretSO.rangeTir);
     }
 }
