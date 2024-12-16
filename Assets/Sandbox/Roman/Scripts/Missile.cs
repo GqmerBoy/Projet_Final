@@ -5,18 +5,21 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     private Transform target;
+
     [SerializeField] float speed = 30f;
     [SerializeField] float turnSpeed = 3f;
     [SerializeField] GameObject explosionEffect;
-    
-    [Header("Smoke Effects")]
-    [SerializeField] private TrailRenderer coreTrail;
-    [SerializeField] private TrailRenderer mediumTrail;
-    [SerializeField] private TrailRenderer outerTrail;
-
+    [SerializeField] GameObject smokeEffect;
+    private GameObject currentSmoke;
     public void Seek(Transform _target)
     {
         target = _target;
+        // Instantiate smoke when missile is launched
+        if (smokeEffect != null)
+        {
+            currentSmoke = Instantiate(smokeEffect, transform.position, transform.rotation);
+            currentSmoke.transform.SetParent(transform); // Make smoke follow missile
+        }
     }
 
     void Update()
@@ -49,6 +52,13 @@ public class Missile : MonoBehaviour
             GameObject effectIns = Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
         }
+
+        if (currentSmoke != null)
+        {
+            currentSmoke.transform.SetParent(null); // Detach smoke before destroying missile
+            Destroy(currentSmoke, 1f); // Destroy smoke after 2 seconds
+        }
+
         Destroy(gameObject);
     }
 
