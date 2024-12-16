@@ -1,0 +1,8 @@
+Model Information:
+* title:	Creature Specimen Jar
+* source:	https://sketchfab.com/3d-models/creature-specimen-jar-8254ff1e5aea4c68bafa60feab242726
+* author:	Michael V (https://sketchfab.com/bossdeff)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
