@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
             _currentTime = _currentTime + Time.deltaTime;
         }
         TimeSpan time = TimeSpan.FromSeconds(_currentTime);
-        _text.text = time.Minutes.ToString() + ":" + time.Seconds.ToString() + ":" + time.Milliseconds.ToString();
+        _text.text = time.ToString(@"mm\:ss\:ff");
     }
 
     public void StartTimer(){

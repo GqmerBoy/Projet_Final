@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class PauseGame : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] public Canvas pauseMenu;
 
-    public bool activePauseMenu = false;
+    public bool menuActive = false;
     // Start is called before the first frame update
     void Start()
     {
-        TogglePauseMenu();
+        pauseMenu.enabled = false;
     }
 
     public void TogglePauseMenu(){
-        if(activePauseMenu){
-            pauseMenu.SetActive(false);
+        pauseMenu.enabled =! pauseMenu.enabled;
+        menuActive =! menuActive;
+        PauseMenu();
+    }
+
+    public void PauseMenu(){
+        if(menuActive == false){
             Time.timeScale = 1;
         }
 
-        else if(!activePauseMenu){
-            pauseMenu.SetActive(true);
+        else{
             Time.timeScale = 0;
         }
     }
