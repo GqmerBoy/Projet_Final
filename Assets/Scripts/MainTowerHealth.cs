@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MainTowerHealth : MonoBehaviour
 {
-   [HideInInspector] public float health = 1000f;
+    [SerializeField] private TowerSO towerSO;
 
     private void Death()
     {
-        if (health <= 0)
+        if (towerSO.health <= 0)
         {
             Destroy(this.gameObject);
             //UIManger.GameOver();

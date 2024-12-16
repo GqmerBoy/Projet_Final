@@ -8,7 +8,7 @@ public class EnemyProjectile : MonoBehaviour
     private Transform _tower;
 
     [SerializeField] BulletSO bulletSO;
-    [SerializeField] MainTowerHealth mainTowerHealth;
+    [SerializeField] TowerSO towerSO;
 
     public void Seek(Transform _target){
         _tower = _target;
@@ -37,7 +37,7 @@ public class EnemyProjectile : MonoBehaviour
     private void HitTower()
     {
         Destroy(gameObject); //Détruit le projectile lorsqu'il touche la tour
-        mainTowerHealth.health -= bulletSO.dommages;
+        towerSO.health -= bulletSO.dommages;
         return;
     }
 }

@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform firePoint; //Le point départ du projectile
 
 
-    private int element = 0; //L'élément du matériel
     private float fireCountdown = 0f; //Le countdown pour le fireRate
     private string towerTag = "Tower"; //Le tag de la tour
 

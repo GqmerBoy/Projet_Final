@@ -8,17 +8,17 @@ using Meta.XR.MRUtilityKit;
 public class RunTimeNavMeshBuilderComponent : MonoBehaviour
 {
 
-    private NavMeshSurface _navmeshSurfave;
+    private NavMeshSurface _navmeshSurface;
 
     // Start is called before the first frame update
     void Start()
     {
-        _navmeshSurfave = GetComponent<NavMeshSurface>();
+        _navmeshSurface = GetComponent<NavMeshSurface>();
         MRUK.Instance.RegisterSceneLoadedCallback(BuildNavMesh);
     }
 
     public void BuildNavMesh()
     {
-        _navmeshSurfave.BuildNavMesh();
+        _navmeshSurface.BuildNavMesh();
     }
 }

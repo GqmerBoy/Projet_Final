@@ -813,9 +813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2e2fe248bf56e4d9f2defd8d5ff5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 4885693270218404804, guid: 659c7043ad7b52f4fafdfbcac9b775ba, type: 3}
-  enemySO: {fileID: 11400000, guid: fa2bddd7979fe1c47898bd490a215694, type: 2}
-  bulletPrefab: {fileID: 6923615454731735584, guid: 6ae301e5c7311fd42a685fd6514ec588,
+  tower: {fileID: 6495200089900928565, guid: 2e9ae6c96b750d042af2c17f164496d3, type: 3}
+  enemySO: {fileID: 11400000, guid: 1021d14b7b7a945469c13db2ea7e4478, type: 2}
+  pointManager: {fileID: 0}
+  bulletPrefab: {fileID: 1552339098034316, guid: c13874774436a6a4c85449cab6e14fa4,
     type: 3}
   firePoint: {fileID: 325432311980617919}
 --- !u!114 &310354484646501220
