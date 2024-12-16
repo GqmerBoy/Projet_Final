@@ -223,8 +223,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
-    m_PressedColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+    m_HighlightedColor: {r: 0.33490568, g: 0.781442, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.5368862, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722892d1611363b47a3ab8ad45f9fb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrist: {fileID: 215403880}
+  wristMenu: {fileID: 0}
 --- !u!114 &341756054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3571,8 +3571,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-    m_PressedColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
+    m_HighlightedColor: {r: 0.33333334, g: 0.78039217, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.5372549, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3722,8 +3722,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-    m_PressedColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
+    m_HighlightedColor: {r: 0.33333334, g: 0.78039217, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.5372549, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3807,38 +3807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObj: {fileID: 6245281284122243302}
---- !u!1 &1570705612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1570705613}
-  m_Layer: 0
-  m_Name: -----Pause Menu-----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1570705613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570705612}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1734407215}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1574195513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4869577802921675287, guid: ea16c3c8c1688234fa81a4f39339bf1b,
@@ -4287,10 +4255,9 @@ GameObject:
   - component: {fileID: 1734407219}
   - component: {fileID: 1734407218}
   - component: {fileID: 1734407217}
-  - component: {fileID: 1734407216}
   - component: {fileID: 1734407221}
   m_Layer: 4
-  m_Name: FlatUnityCanvas
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4305,27 +4272,14 @@ Transform:
   m_GameObject: {fileID: 1734407214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.289, z: 1.21}
-  m_LocalScale: {x: 3.95, y: 3.95, z: 3.95}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1483680666}
   - {fileID: 2111004064}
-  m_Father: {fileID: 1570705613}
+  m_Father: {fileID: 8976139343416256932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1734407216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734407214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722892d1611363b47a3ab8ad45f9fb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wrist: {fileID: 2111004072}
 --- !u!114 &1734407217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4348,34 +4302,10 @@ MonoBehaviour:
       m_Calls: []
   _whenSelectedHovered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Oculus.Interaction.AudioTrigger, Oculus.Interaction.Samples
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenSelectedEmpty:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Oculus.Interaction.AudioTrigger, Oculus.Interaction.Samples
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenUnselectedHovered:
     m_PersistentCalls:
       m_Calls: []
@@ -4577,7 +4507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f677aa7da186e754ebc6898bc8cd24bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 2111004072}
+  pauseMenu: {fileID: 1734407214}
   menuActive: 0
 --- !u!1001 &1780632409
 PrefabInstance:
@@ -4746,7 +4676,6 @@ GameObject:
   - component: {fileID: 2001737191}
   - component: {fileID: 2001737190}
   - component: {fileID: 2001737189}
-  - component: {fileID: 2001737188}
   - component: {fileID: 2001737193}
   m_Layer: 4
   m_Name: StartMenuCanvas
@@ -4764,26 +4693,13 @@ Transform:
   m_GameObject: {fileID: 2001737186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.39}
+  m_LocalPosition: {x: 0, y: 1, z: 1.5}
   m_LocalScale: {x: 3.95, y: 3.95, z: 3.95}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2132064347}
   m_Father: {fileID: 1149684849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2001737188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001737186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722892d1611363b47a3ab8ad45f9fb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wrist: {fileID: 2132064355}
 --- !u!114 &2001737189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5011,7 +4927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44c568561caec84ea499f297d1713b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMenu: {fileID: 2132064355}
+  startMenu: {fileID: 2001737186}
+  timer: {fileID: 215403880}
   scriptTimer: {fileID: 215403870}
 --- !u!1 &2002579185
 GameObject:
@@ -11288,6 +11205,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400002, guid: 126d619cf4daa52469682f85c1378b4a,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1734407215}
+    - targetCorrespondingSourceObject: {fileID: 400002, guid: 126d619cf4daa52469682f85c1378b4a,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 341756051}
     - targetCorrespondingSourceObject: {fileID: 482130, guid: 126d619cf4daa52469682f85c1378b4a,
         type: 3}
@@ -15309,7 +15230,7 @@ GameObject:
   - component: {fileID: 3411325390314732131}
   - component: {fileID: 6753444736968495746}
   m_Layer: 4
-  m_Name: FlatUnityCanvas
+  m_Name: WristMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24240,7 +24161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722892d1611363b47a3ab8ad45f9fb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrist: {fileID: 5186235301857580262}
+  wristMenu: {fileID: 3543191445015898942}
 --- !u!4 &6754190155297398431
 Transform:
   m_ObjectHideFlags: 0
@@ -30964,4 +30885,3 @@ SceneRoots:
   - {fileID: 355025260}
   - {fileID: 616057177}
   - {fileID: 1149684849}
-  - {fileID: 1570705613}

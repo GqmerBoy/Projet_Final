@@ -5,15 +5,25 @@ using UnityEngine;
 public class ShowUI : MonoBehaviour
 {
 
-    [SerializeField] private Canvas wrist;
+    [SerializeField] private GameObject wristMenu;
+
+    private bool menuActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        wrist.enabled = false;
+        wristMenu.SetActive(false);
     }
 
     public void ToggleMenu(){
-        wrist.enabled =! wrist.enabled;
+        if(wristMenu.activeInHierarchy == false){
+            wristMenu.SetActive(true);
+            menuActive = true;
+        }
+
+        else{
+            wristMenu.SetActive(false);
+            menuActive = false;
+        }
     }
 }

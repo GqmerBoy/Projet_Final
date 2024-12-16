@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    [SerializeField] public Canvas startMenu;
+    [SerializeField] public GameObject startMenu;
+    [SerializeField] public Canvas timer;
 
     [SerializeField] public GameObject scriptTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        startMenu.enabled = true;
+        timer.enabled = false;
+        startMenu.SetActive(true);
         Time.timeScale = 0;
     }
 
@@ -24,7 +26,8 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame(){
         scriptTimer.GetComponent<Timer>()._currentTime = 0;
-        startMenu.enabled = false;
+        startMenu.SetActive(false);
+        timer.enabled = true;
         Time.timeScale = 1;
     }
 }
