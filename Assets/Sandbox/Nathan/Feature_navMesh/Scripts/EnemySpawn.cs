@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 
-    [SerializeField] private float spawnTimer = 1f;
+    [SerializeField] private float spawnTimer = 5f;
     [SerializeField] private GameObject prefabToSpawn;
     
     [SerializeField] private float minDistance = 0.3f;
@@ -14,13 +14,6 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float normalOffset;
 
     private float timer;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +28,12 @@ public class EnemySpawn : MonoBehaviour
         {
             SpawnEnemy();
             timer -= spawnTimer;
+            spawnTimer -= 0.10f;
+        }
+
+        if (spawnTimer <= 2f)
+        {
+            spawnTimer = 2f;
         }
     }
 

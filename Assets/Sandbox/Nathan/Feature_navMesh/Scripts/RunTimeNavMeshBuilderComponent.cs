@@ -10,18 +10,11 @@ public class RunTimeNavMeshBuilderComponent : MonoBehaviour
 
     private NavMeshSurface _navmeshSurfave;
 
-
     // Start is called before the first frame update
     void Start()
     {
         _navmeshSurfave = GetComponent<NavMeshSurface>();
         MRUK.Instance.RegisterSceneLoadedCallback(BuildNavMesh);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void BuildNavMesh()

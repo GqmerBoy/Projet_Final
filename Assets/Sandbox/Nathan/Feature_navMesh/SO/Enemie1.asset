@@ -16,4 +16,4 @@ MonoBehaviour:
   vitesseMouvement: 0.5
   nbPoints: 5
   vitesseTir: 1
-  rangeTir: 1
+  rangeTir: 2.5

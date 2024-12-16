@@ -11,17 +11,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform tower; //La tour pricipale
 
     [SerializeField] EnemySO enemySO;
+    [SerializeField] PointManager pointManager;
 
 
     [Header("Unity setup")]
     
     [SerializeField] private GameObject bulletPrefab; //Le projectile de l'enemie
     [SerializeField] private Transform firePoint; //Le point départ du projectile
-    [SerializeField] private Material[] material; //Les matériaux de l'enemie
 
 
-    private int _element = 0; //L'élément du matériel
-    private Renderer _renderer; 
+    private int element = 0; //L'élément du matériel
     private float fireCountdown = 0f; //Le countdown pour le fireRate
     private string towerTag = "Tower"; //Le tag de la tour
 
@@ -31,10 +30,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); 
-
-        _renderer = GetComponent<Renderer>();
-        _renderer.enabled = true;
-        _renderer.sharedMaterial = material[_element];
     }
 
 
@@ -44,24 +39,7 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(tower.transform.position); //Destination du NavMesh
 
-        _renderer.sharedMaterial = material[_element];
-        EnemyHealth(); //Change le matriel de l'enemie pour avertir le joueur que cet enemie est presque mort
         Target(); //Appelle la fonction Shoot() si l'enemy est assez proche de la tour à une fréquence de tir définie.
-    }
-
-
-
-    private void EnemyHealth()
-    {
-        if(enemySO.pointsDeVie <= 25)
-        {
-            _element = 1;
-        }
-
-        else
-        {
-            _element = 0;
-        }
     }
 
 
@@ -70,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         //Debug.Log("Shoot");
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        EnemyProjectile bullet = bulletGO.GetComponent<EnemyProjectile>();
         if(bullet != null)
         {
             bullet.Seek(tower);
@@ -88,7 +66,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    void Target()
+    private void Target()
     {
         GameObject tower = GameObject.FindGameObjectWithTag(towerTag);
         
@@ -105,5 +83,24 @@ public class Enemy : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime; //Pour que le countdown soit à la seconde près
+    }
+
+
+
+    private void Death()
+    {
+        if (enemySO.pointsDeVie <= 0) 
+        { 
+            Destroy(this.gameObject);
+            return;
+        }
+    }
+
+
+
+    private void OnDestroy()
+    {
+        pointManager.points += enemySO.nbPoints;
+        pointManager.money += enemySO.nbPoints;
     }
 }

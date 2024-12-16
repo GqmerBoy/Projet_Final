@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Projectile1
   m_EditorClassIdentifier: 
   dommages: 25
-  vitesseDeplacement: 75
+  vitesseDeplacement: 25
