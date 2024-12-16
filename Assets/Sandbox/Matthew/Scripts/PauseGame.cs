@@ -8,20 +8,22 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
 
-    public bool activePauseMenu = true;
+    public bool activePauseMenu = false;
     // Start is called before the first frame update
     void Start()
     {
-        DisplayPauseMenu();
+        TogglePauseMenu();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void TogglePauseMenu(){
+        if(activePauseMenu){
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
 
-    private void DisplayPauseMenu(){
-        
+        else if(!activePauseMenu){
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
