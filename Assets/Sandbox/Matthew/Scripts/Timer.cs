@@ -7,7 +7,7 @@ using System;
 public class Timer : MonoBehaviour
 {
     private bool _timerActive = true;
-    private float _currentTime;
+    public float _currentTime;
     [SerializeField] private TMP_Text _text;
     // Start is called before the first frame update
     void Start()

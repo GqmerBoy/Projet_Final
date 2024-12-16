@@ -6,6 +6,7 @@ public class ShowUI : MonoBehaviour
 {
 
     [SerializeField] private Canvas wrist;
+
     // Start is called before the first frame update
     void Start()
     {
