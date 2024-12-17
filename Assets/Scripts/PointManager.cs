@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PointManager : MonoBehaviour
 {
-    public float points = 0;
-    public float money = 0;
+    public float points;
+    public float money;
 
     void Start()
     {
         points = 0; 
-        money = 0 ;
+        money = 500;
     }
 }

@@ -5,18 +5,21 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     private Transform target;
-    private Enemy enemy;
+    [SerializeField] private Enemy enemy;
     [SerializeField] private BulletSO bulletSO;
     [SerializeField] GameObject explosionEffect;
-    private GameObject currentSmoke;
     public void Seek(Transform _target)
     {
         target = _target;
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        if (enemy == null){
+            Debug.Log(enemy + "is not defined");
+        }
     }
 
     void Start()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        
     }
 
     void Update()
@@ -51,8 +54,11 @@ public class Missile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        HitTarget();
+        if (collider.gameObject.CompareTag("Enemy")){
+            HitTarget();
+        }
+        
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4788f08f2808d140a6086b7189868c5, type: 3}
   m_Name: ProjectilePPP
   m_EditorClassIdentifier: 
-  dommages: 25
+  dommages: 5
   vitesseDeplacement: 5

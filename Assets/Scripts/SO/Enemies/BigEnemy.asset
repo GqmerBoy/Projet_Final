@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigEnemy
   m_EditorClassIdentifier: 
   pointsDeVie: 200
-  vitesseMouvement: 0.2
+  vitesseMouvement: 0.1
   nbPoints: 100
   vitesseTir: 0.1
   rangeTir: 3
