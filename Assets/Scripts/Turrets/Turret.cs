@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     [Header("General")]
 
     [SerializeField] private TurretSO turretSO;
+    private AudioSource shootingAudio;
 
     [Header("Use Bullets (default)")]
 
@@ -37,6 +38,7 @@ public class Turret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        shootingAudio = GetComponent<AudioSource>();
     }
 
     void UpdateTarget() 
@@ -128,6 +130,7 @@ void Shoot()
         GameObject projectile;
         if (useMissiles)
         {
+            shootingAudio.Play();
             projectile = Instantiate(missilePrefab, firePoint.position, firePoint.rotation);
             Missile missile = projectile.GetComponent<Missile>();
             if (missile != null)
@@ -137,6 +140,7 @@ void Shoot()
         }
         else
         {
+            shootingAudio.Play();
             projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bulletComponent = projectile.GetComponent<Bullet>();
             if (bulletComponent != null)
