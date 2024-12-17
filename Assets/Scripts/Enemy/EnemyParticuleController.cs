@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class EnemyParticuleController : MonoBehaviour
 {
-    private ParticleSystem _particleSystem;
+    private ParticleSystem particleSystem;
+    private AudioSource enemyEnter;
+    private bool alreadyPlayed;
 
     // Start is called before the first frame update
     void Start()
     {
-        _particleSystem = GetComponent<ParticleSystem>();
+        particleSystem = GetComponent<ParticleSystem>();
+        enemyEnter = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall") && !alreadyPlayed)
         {
-            _particleSystem.Play();
+            particleSystem.Play();
+            enemyEnter.Play();
+            alreadyPlayed = true;
         }
     }
 }
