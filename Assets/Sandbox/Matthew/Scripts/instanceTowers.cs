@@ -14,9 +14,9 @@ public class instanceTowers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        prixCanon1.text = scriptObj.GetComponent<SpawnTower>().prixTour1.ToString();
-        prixCanon2.text = scriptObj.GetComponent<SpawnTower>().prixTour2.ToString();
-        prixCanon3.text = scriptObj.GetComponent<SpawnTower>().prixTour3.ToString();
+        prixCanon1.text = scriptObj.GetComponent<SpawnTower>().prixTour1.ToString() + "$";
+        prixCanon2.text = scriptObj.GetComponent<SpawnTower>().prixTour2.ToString() + "$";
+        prixCanon3.text = scriptObj.GetComponent<SpawnTower>().prixTour3.ToString() + "$";
     }
 
     // Update is called once per frame
