@@ -6,6 +6,12 @@ using TMPro;
 public class SpawnTower : MonoBehaviour
 {
 
+    [SerializeField] public GameObject moneyScript;
+
+    [SerializeField] public float prixTour1;
+    [SerializeField] public float prixTour2;
+    [SerializeField] public float prixTour3;
+
     [SerializeField] public GameObject startScript;
     public int numero = 0;
 
@@ -154,18 +160,28 @@ public class SpawnTower : MonoBehaviour
 
             else
             {
-                if(numero == 1){
+                if(moneyScript.GetComponent<PointManager>().money >= prixTour1 && numero == 1){
+                    Debug.Log("tour 1");
+                    moneyScript.GetComponent<PointManager>().money -= prixTour1;
                     Instantiate(tour1, hitPoint, Quaternion.identity);
                     bouton1.GetComponent<instanceTowers>().Tour1(); 
                 }
-                else if(numero == 2){
+                else if(moneyScript.GetComponent<PointManager>().money >= prixTour2 && numero == 2){
+                    Debug.Log("tour 2");
+                    moneyScript.GetComponent<PointManager>().money -= prixTour2;
                     Instantiate(tour2, hitPoint, Quaternion.identity);
                     bouton2.GetComponent<instanceTowers>().Tour2(); 
                 }
     
-                else if(numero == 3){
+                else if(moneyScript.GetComponent<PointManager>().money >= prixTour3 && numero == 3){
+                    Debug.Log("tour 3");
+                    moneyScript.GetComponent<PointManager>().money -= prixTour3;
                     Instantiate(tour3, hitPoint, Quaternion.identity);
                     bouton3.GetComponent<instanceTowers>().Tour3(); 
+                }
+
+                else{
+                    return;
                 }  
             }
             
