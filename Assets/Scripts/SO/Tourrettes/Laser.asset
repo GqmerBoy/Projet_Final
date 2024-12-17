@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47d06966f58d08b4daf43d7ebcb90edd, type: 3}
-  m_Name: PetitPewPew
+  m_Name: Laser
   m_EditorClassIdentifier: 
-  vitesseRotation: 10
-  vitesseTir: 5
-  rangeTir: 3
+  vitesseRotation: 7.5
+  vitesseTir: 0.01
+  rangeTir: 2

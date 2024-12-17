@@ -5,14 +5,18 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Transform target;
-    [SerializeField] private Enemy enemy;
+    private Enemy enemy;
     [SerializeField] private BulletSO bulletSO;
-    [SerializeField] float speed = 70f;
     [SerializeField] GameObject impactEffect;
 
     public void Seek (Transform _target)
     {
         target = _target;
+    }
+
+    void Start()
+    {
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -25,7 +29,7 @@ public class Bullet : MonoBehaviour
         }
 
         Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
+        float distanceThisFrame = bulletSO.vitesseDeplacement * Time.deltaTime;
 
         if (dir.magnitude <= distanceThisFrame) 
         {
@@ -34,8 +38,6 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
-
     }
 
     void HitTarget() 

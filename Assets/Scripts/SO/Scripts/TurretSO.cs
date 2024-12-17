@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class TurretSO : ScriptableObject
 {
-    [Range(5, 10)]
+    [Range(1, 10)]
     [Tooltip("Vitesse de rotation")]
     public float vitesseRotation = 7.5f;
 
-    [Range(0.01f, 2)]
+    [Range(0.01f, 5)]
     [Tooltip("Fréquence de tir/sec")]
     public float vitesseTir = 1;
 
