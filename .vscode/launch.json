@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Library/PackageCache/com.unity.xr.core-utils@2.3.0/tools~/CI/bin/Debug/net6.0/wrench.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Library/PackageCache/com.unity.xr.core-utils@2.3.0/tools~/CI",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        {
+            "name": "Attach to Unity",
+            "type": "vstuc",
+            "request": "attach"
+        }
+    ]
+}
