@@ -21666,9 +21666,9 @@ MonoBehaviour:
   bouton1: {fileID: 42207564}
   bouton2: {fileID: 1501913203}
   bouton3: {fileID: 1521465892}
-  tour1: {fileID: 6189025483700488789, guid: d6dba9f0535dc92429675dfdc44a88a7, type: 3}
-  tour2: {fileID: 3547106952098258530, guid: c64ec911d4650604280b848718f6da88, type: 3}
-  tour3: {fileID: 5618174512449124204, guid: 2e550e6b9e859034c9c131ef8e1897b2, type: 3}
+  tour1: {fileID: 0}
+  tour2: {fileID: 0}
+  tour3: {fileID: 0}
   rayStartPoint: {fileID: 1226313115}
   rayLength: 8
   labelFlag: 9
