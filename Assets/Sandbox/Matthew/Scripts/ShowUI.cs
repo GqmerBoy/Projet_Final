@@ -7,6 +7,8 @@ public class ShowUI : MonoBehaviour
 
     [SerializeField] private GameObject wristMenu;
 
+    [SerializeField] public GameObject startScript;
+
     private bool menuActive = false;
 
     // Start is called before the first frame update
@@ -16,14 +18,22 @@ public class ShowUI : MonoBehaviour
     }
 
     public void ToggleMenu(){
-        if(wristMenu.activeInHierarchy == false){
-            wristMenu.SetActive(true);
-            menuActive = true;
+        if(startScript.GetComponent<StartMenu>().startMenuActive == true){
+            return;
         }
 
-        else{
-            wristMenu.SetActive(false);
-            menuActive = false;
+        else
+        {
+            if(wristMenu.activeInHierarchy == false){
+                wristMenu.SetActive(true);
+                menuActive = true;
+            }
+
+            else{
+                wristMenu.SetActive(false);
+                menuActive = false;
+            }  
         }
+        
     }
 }

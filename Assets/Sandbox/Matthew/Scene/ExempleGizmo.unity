@@ -963,8 +963,6 @@ GameObject:
   - component: {fileID: 341756056}
   - component: {fileID: 341756055}
   - component: {fileID: 341756054}
-  - component: {fileID: 341756053}
-  - component: {fileID: 341756052}
   m_Layer: 4
   m_Name: timer
   m_TagString: Untagged
@@ -988,31 +986,6 @@ Transform:
   - {fileID: 215403871}
   m_Father: {fileID: 8976139343416256932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &341756052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341756050}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82ef4ae7c13dd64ba57977bf5b8c689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &341756053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341756050}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722892d1611363b47a3ab8ad45f9fb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wristMenu: {fileID: 0}
 --- !u!114 &341756054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4508,6 +4481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1734407214}
+  startScript: {fileID: 2001737186}
   menuActive: 0
 --- !u!1001 &1780632409
 PrefabInstance:
@@ -4930,6 +4904,7 @@ MonoBehaviour:
   startMenu: {fileID: 2001737186}
   timer: {fileID: 215403880}
   scriptTimer: {fileID: 215403870}
+  startMenuActive: 1
 --- !u!1 &2002579185
 GameObject:
   m_ObjectHideFlags: 0
@@ -14923,34 +14898,10 @@ MonoBehaviour:
       m_Calls: []
   _whenSelectedHovered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Oculus.Interaction.AudioTrigger, Oculus.Interaction.Samples
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenSelectedEmpty:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Oculus.Interaction.AudioTrigger, Oculus.Interaction.Samples
-        m_MethodName: PlayAudio
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _whenUnselectedHovered:
     m_PersistentCalls:
       m_Calls: []
@@ -20592,6 +20543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f91f6ecf93453147a20cb559cc80273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startScript: {fileID: 2001737186}
   numero: 0
   bouton1: {fileID: 42207564}
   bouton2: {fileID: 1501913203}
@@ -24162,6 +24114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristMenu: {fileID: 3543191445015898942}
+  startScript: {fileID: 2001737186}
 --- !u!4 &6754190155297398431
 Transform:
   m_ObjectHideFlags: 0

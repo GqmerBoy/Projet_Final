@@ -5,6 +5,8 @@ using TMPro;
 
 public class SpawnTower : MonoBehaviour
 {
+
+    [SerializeField] public GameObject startScript;
     public int numero = 0;
 
     // Boutons
@@ -146,19 +148,27 @@ public class SpawnTower : MonoBehaviour
         // V�rifier si le bouton de cr�ation de tour est press�
         if (OVRInput.GetDown(spawnButton, controller))
         {
-            if(numero == 1){
-                Instantiate(tour1, hitPoint, Quaternion.identity);
-                bouton1.GetComponent<instanceTowers>().Tour1(); 
-            }
-            else if(numero == 2){
-                Instantiate(tour2, hitPoint, Quaternion.identity);
-                bouton2.GetComponent<instanceTowers>().Tour2(); 
+            if(startScript.GetComponent<StartMenu>().startMenuActive == true){
+                return;
             }
 
-            else if(numero == 3){
-                Instantiate(tour3, hitPoint, Quaternion.identity);
-                bouton3.GetComponent<instanceTowers>().Tour3(); 
+            else
+            {
+                if(numero == 1){
+                    Instantiate(tour1, hitPoint, Quaternion.identity);
+                    bouton1.GetComponent<instanceTowers>().Tour1(); 
+                }
+                else if(numero == 2){
+                    Instantiate(tour2, hitPoint, Quaternion.identity);
+                    bouton2.GetComponent<instanceTowers>().Tour2(); 
+                }
+    
+                else if(numero == 3){
+                    Instantiate(tour3, hitPoint, Quaternion.identity);
+                    bouton3.GetComponent<instanceTowers>().Tour3(); 
+                }  
             }
+            
             
         }
     }
