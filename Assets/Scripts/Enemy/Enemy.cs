@@ -9,9 +9,8 @@ public class Enemy : MonoBehaviour
 {
     private NavMeshAgent agent; //Pour le navMeshAgent
     [SerializeField] private Transform tower; //La tour pricipale
-
-    [SerializeField] EnemySO enemySO;
-    [SerializeField] PointManager pointManager;
+    [SerializeField] private EnemySO enemySO;
+    private PointManager pointManager;
     private float currentHealth;
 
 
@@ -28,6 +27,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        pointManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<PointManager>();
         currentHealth = enemySO.pointsDeVie;
     }
 
@@ -45,7 +45,6 @@ public class Enemy : MonoBehaviour
 
     private void Shoot()
     {
-        //Debug.Log("Shoot");
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         EnemyProjectile bullet = bulletGO.GetComponent<EnemyProjectile>();
         if(bullet != null)
@@ -91,17 +90,11 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         if (currentHealth <= 0)
-        {
+        {   
+            pointManager.points += enemySO.nbPoints; //Ajoute les points au joueur
+            pointManager.money += enemySO.nbPoints; //Ajoute l'argent à la balance
             Destroy(gameObject);
             return;
         }
     }
-
-
-
-    /*private void OnDestroy()
-    {
-        pointManager.points += enemySO.nbPoints;
-        pointManager.money += enemySO.nbPoints;
-    }*/
 }

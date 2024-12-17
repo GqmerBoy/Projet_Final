@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d06966f58d08b4daf43d7ebcb90edd, type: 3}
   m_Name: CanonMissiles
   m_EditorClassIdentifier: 
-  vitesseRotation: 2
-  vitesseTir: 0.1
+  vitesseRotation: 1
+  vitesseTir: 0.5
   rangeTir: 5

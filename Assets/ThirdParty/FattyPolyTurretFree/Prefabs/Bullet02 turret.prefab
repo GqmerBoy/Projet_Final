@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8116f1863b633af4a896046e921c1b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   bulletSO: {fileID: 11400000, guid: 8de4c277f9b39b64ead94bae20c397e6, type: 2}
   explosionEffect: {fileID: 1099908636586284973, guid: a503958ff686e9e45b6d247efedb708e,
     type: 3}
