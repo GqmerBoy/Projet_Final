@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitesseRotation: 10
   vitesseTir: 5
-  rangeTir: 3
+  rangeTir: 2.5

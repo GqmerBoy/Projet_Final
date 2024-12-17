@@ -15,5 +15,5 @@ MonoBehaviour:
   pointsDeVie: 200
   vitesseMouvement: 0.1
   nbPoints: 100
-  vitesseTir: 0.1
+  vitesseTir: 0.2
   rangeTir: 3
