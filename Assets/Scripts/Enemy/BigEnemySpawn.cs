@@ -13,8 +13,6 @@ public class BigEnemySpawn : MonoBehaviour
     [SerializeField] MRUKAnchor.SceneLabels spawnLabel;
     [SerializeField] private float normalOffset;
 
-    [SerializeField] private EnemySO enemySO;
-
     private float timer;
 
 

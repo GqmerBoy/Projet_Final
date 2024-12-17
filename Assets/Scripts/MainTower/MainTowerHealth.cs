@@ -9,25 +9,49 @@ public class MainTowerHealth : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     private float currentHealth;
 
+    [SerializeField] private AudioClip[] audioClips;
+    private AudioSource audioSource;
+    private bool isHalfHealth = false;
+    private bool isLowHealth = false;
+    private bool isDead = false;
+
+    private ParticleSystem particleExplode;
+
+
     void Start()
     {
         currentHealth = towerSO.health;
         healthBar.SetMaxHealth(towerSO.health);
-    }
-
-    private void Death()
-    {
-        if (towerSO.health <= 0)
-        {
-            Destroy(this.gameObject);
-            //UIManager.GameOver();
-            return;
-        }
+        audioSource = GetComponent<AudioSource>();
+        particleExplode = GetComponent<ParticleSystem>();
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        audioSource.PlayOneShot(audioClips[0]);
+
+        if (currentHealth <= towerSO.health * 0.5f && !isHalfHealth)
+        {
+            audioSource.PlayOneShot(audioClips[1]);
+            isHalfHealth = true;
+        }
+
+        if (currentHealth <= towerSO.health * 0.1f && !isLowHealth)
+        {
+            audioSource.PlayOneShot(audioClips[2]);
+            isLowHealth = true;
+        }
+
+        if (currentHealth <= 0 && !isDead)
+        {
+            audioSource.PlayOneShot(audioClips[3]);
+            particleExplode.Play();
+            isDead = true;
+            Destroy(gameObject, 1);
+            //UIManager.GameOver();
+            return;
+        }
     }
 }
