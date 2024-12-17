@@ -17,6 +17,8 @@ public class MainTowerHealth : MonoBehaviour
 
     private ParticleSystem particleExplode;
 
+    [SerializeField] private GameOver gameOverUI;
+
 
     void Start()
     {
@@ -28,6 +30,7 @@ public class MainTowerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         audioSource.PlayOneShot(audioClips[0]);
@@ -48,9 +51,10 @@ public class MainTowerHealth : MonoBehaviour
         {
             audioSource.PlayOneShot(audioClips[3]);
             particleExplode.Play();
+            gameOverUI.EndGame();
             isDead = true;
             Destroy(gameObject, 1);
-            //UIManager.GameOver();
+            
             return;
         }
     }
